@@ -1,5 +1,5 @@
 # PlanExp-protocols
-Protocols for the analyses performed for the PlanExp web application.
+Protocols of the analyses performed for the PlanExp web application.
 
 ## Download data
 

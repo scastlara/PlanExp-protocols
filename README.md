@@ -19,7 +19,7 @@ The analyses for the RNA-seq experiments (traditional RNA-seq and Single-Cell RN
 * [2018 Rajewsky Cell Atlas](markdowns/2018_Rajewsky.md)
 * [2018 Reddien Cell Atlas](markdowns/2018_Reddien.md)
 
-## Gene Co-expression inference
+## Gene co-expression network inference
 
 The protocol for inferring gene co-expression relationships using GENIE3 can be found [here](markdowns/co-expression_genie3.md).
 

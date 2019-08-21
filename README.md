@@ -21,6 +21,6 @@ The analyses for the RNA-seq experiments (traditional RNA-seq and Single-Cell RN
 
 ## Gene Co-expression inference
 
-The protocol for inferring gene co-expression relationships using GENIE3 can be found [here](markdowns/co-expression_genie3.md).
+The protocol for inferring gene co-expression relationships using GRNBoost can be found [here](markdowns/co-expression_links.md).
 
 

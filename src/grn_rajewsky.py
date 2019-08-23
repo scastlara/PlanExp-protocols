@@ -9,7 +9,7 @@ def grouper(iterable, n, fillvalue=None):
     args = [iter(iterable)] * n
     return izip_longest(*args, fillvalue=fillvalue)
 
-in_file  = 'rawdata/regeneration.counts'
+in_file  = 'rawdata/rajewsky.dge.txt'
 tf_file  = 'rawdata/go-regulators_rajewsky.txt'
 
 # ex_matrix is a DataFrame with gene names as column names

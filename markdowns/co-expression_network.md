@@ -119,18 +119,18 @@ src/find_in_reactome.py \
 tail +2 network_rajewsky_FILTERED.human.genes.reactome.csv | wc
 
 # Number of genes in Links
-tail +2 network_rajewsky_FILTERED.human.genes.reactome.csv | gawk -F ',' '{print $1"\n"$3}' | sort | uniq | wc
+tail +2 network_rajewsky_FILTERED.human.genes.reactome.csv | gawk -F '\t' '{print $1"\n"$3}' | sort | uniq | wc
 
 # Number of links with annotated Reactome
 egrep -c "R-HSA" network_rajewsky_FILTERED.human.genes.reactome.csv
 
 # Number of genes in links with annotated Reactome
-egrep "R-HSA" network_rajewsky_FILTERED.human.genes.reactome.csv | gawk -F ',' '{print $1"\n"$3}' | sort | uniq | wc
+egrep "R-HSA" network_rajewsky_FILTERED.human.genes.reactome.csv | gawk -F '\t' '{print $1"\n"$3}' | sort | uniq | wc
 
 # Number of annotated Reactome pathways
 perl -ne '
     chomp; 
-    @cols = split /,/; 
+    @cols = split /\t/; 
     @r = split /;/, $cols[-1]; 
     print join("\n", @r), "\n"
 ' network_rajewsky_FILTERED.human.genes.reactome.csv | \
@@ -140,7 +140,7 @@ perl -ne '
 # Number of unique annotated Reactome pathways
 perl -ne '
     chomp; 
-    @cols = split /,/; 
+    @cols = split /\t/; 
     @r = split /;/, $cols[-1]; 
     print join("\n", @r), "\n"
 ' network_rajewsky_FILTERED.human.genes.reactome.csv | \
@@ -150,7 +150,7 @@ perl -ne '
 
 | Total Links | Total Genes | Links with Reactome | Genes in links with Reactome | Reactome Pathways | Unique Reactome Pathways |
 | :---------: | :---------: | :-----------------: | :-------------------------:  | :---------------: | :----------------------: |
-|    37,246   |   15,196    |       3,635         |             1,855            |      17,257       |           638            |
+|    37,246   |   15,196    |       3,635         |             1,855            |      18671       |           792            |
 
 
 
@@ -202,22 +202,54 @@ python3 filter_connected_components.py network_reddien_FILTERED.csv > network_re
 gawk -F ',' '{print $4}' network_reddien_FILTERED.components.csv  | sort | uniq -c | sort -g -k2
 ```
 
-```  
-37234 0
-    1 1
-    1 2
-    1 3
-    1 4
-    1 5
-    1 6
-    1 7
-    1 8
-    2 9
-    1 10
-    1 11
 ```
+35934 0
+      3 1
+      2 2
+      6 3
+      1 4
+      1 5
+      1 6
+      1 7
+      1 8
+      1 9
+      1 10
+      1 11
+      1 12
+      1 13
+      1 14
+      5 15
+      2 16
+      3 17
+      1 18
+      2 19
+      2 20
+      2 21
+      2 22
+      1 23
+      1 24
+      7 25
+      3 26
+      1 27
+      4 28
+      1 29
+      1 30
+      1 31
+      1 32
+      2 33
+      3 34
+      1 35
+      1 36
+      4 37
+      1 38
+      2 39
+      1 40
+      1 41
+      2 42
+```  
 
-> There are 12 connected components.
+
+> There are 43 connected components.
 
 Annotate planarian genes with Human homologs.
 
@@ -294,18 +326,18 @@ src/find_in_reactome.py \
 tail +2 network_reddien_FILTERED.human.genes.reactome.csv | wc
 
 # Number of genes in Links
-tail +2 network_reddien_FILTERED.human.genes.reactome.csv | gawk -F ',' '{print $1"\n"$3}' | sort | uniq | wc
+tail +2 network_reddien_FILTERED.human.genes.reactome.csv | gawk -F '\t' '{print $1"\n"$3}' | sort | uniq | wc
 
 # Number of links with annotated Reactome
 egrep -c "R-HSA" network_reddien_FILTERED.human.genes.reactome.csv
 
 # Number of genes in links with annotated Reactome
-egrep "R-HSA" network_reddien_FILTERED.human.genes.reactome.csv | gawk -F ',' '{print $1"\n"$3}' | sort | uniq | wc
+egrep "R-HSA" network_reddien_FILTERED.human.genes.reactome.csv | gawk -F '\t' '{print $1"\n"$3}' | sort | uniq | wc
 
 # Number of annotated Reactome pathways
 perl -ne '
     chomp; 
-    @cols = split /,/; 
+    @cols = split /\t/; 
     @r = split /;/, $cols[-1]; 
     print join("\n", @r), "\n"
 ' network_reddien_FILTERED.human.genes.reactome.csv | \
@@ -315,7 +347,7 @@ perl -ne '
 # Number of unique annotated Reactome pathways
 perl -ne '
     chomp; 
-    @cols = split /,/; 
+    @cols = split /\t/; 
     @r = split /;/, $cols[-1]; 
     print join("\n", @r), "\n"
 ' network_reddien_FILTERED.human.genes.reactome.csv | \
@@ -326,7 +358,7 @@ perl -ne '
 
 | Total Links | Total Genes | Links with Reactome | Genes in links with Reactome | Reactome Pathways | Unique Reactome Pathways |
 | :---------: | :---------: | :-----------------: | :-------------------------:  | :---------------: | :----------------------: |
-|    36,014   |   11,408    |       3,490         |             1,601            |      15,927       |           623            |
+|    36,014   |   11,408    |       3,490         |             1,601            |      17,215       |           777            |
 
 
 
@@ -377,6 +409,8 @@ perl -e '
 ' ../rajewsky_grn/network_rajewsky_ALL.csv ../reddien_grn/network_reddien_ALL.csv > score_comparison.tbl
 ```
 
+> In R terminal...
+
 ```{r}
 library(dplyr)
 library(ggplot2)
@@ -392,4 +426,15 @@ ggplot(data_zero, aes(x=V3, y=V4)) +
     xlab("2018 Rajewsky weight") + 
     ylab("2018 Reddien weight")
 dev.off()
+```
+
+
+## Saving for PlanExp
+
+
+```{sh}
+python3 src/format_grn.py \
+    "2018 Rajewsky Cell Atlas:network_rajewsky_FILTERED.human.genes.reactome.csv" \
+    "2018 Reddien Cell Atlas:network_reddien_FILTERED.human.genes.reactome.csv" \
+    | sort -k1 -k2 -k3 > GRN_FOR_PLANNET.tbl
 ```

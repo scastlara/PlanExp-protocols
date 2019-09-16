@@ -54,7 +54,7 @@ def print_links_with_reactome(links_filename, reactome_membership):
             reactome_pathways.extend(reactome_for_link(reactome_membership, homolog1, homolog2))
             reactome_pathways.extend(reactome_for_link(reactome_membership, name1, name2))
             reactome_pathways = format_reactome_pathways(reactome_pathways)
-            print("{},{}".format(",".join(columns), ";".join(reactome_pathways)))
+            print("{}\t{}".format("\t".join(columns), ";".join(reactome_pathways)))
 
 
 

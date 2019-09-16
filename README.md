@@ -32,7 +32,7 @@ The protocol for inferring gene co-expression relationships using GRNBoost can b
 ## References
 
 * Castillo-Lara, S. and Abril, J. F. (2018). PlanNET: homology-based predicted interactome for multiple planarian transcriptomes. Bioinformatics, 34(6), 1016–1023.
-* Fincher, C. T. and others. (2018). Cell type transcriptome atlas for the planarian Schmidtea mediterranea. Science, 360(6391).
+* Fincher, C. T. et al. (2018). Cell type transcriptome atlas for the planarian Schmidtea mediterranea. Science, 360(6391).
 * Kao, D. et al. (2013). The planarian regeneration transcriptome reveals a shared but temporally shifted regulatory program between opposing head and tail scenarios. BMC Genomics, 14(1), 797.
 * Labbé, R. M. et al. (2012). A comparative transcriptomic analysis reveals conserved features of stem cell pluripotency in planarians and mammals. Stem Cells, 30(8), 1734–1745.
 * Plass, M. et al. (2018). Cell type atlas and lineage tree of a whole complex animal by single-cell transcriptomics. Science, 360(6391).

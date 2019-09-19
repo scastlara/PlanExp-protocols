@@ -21,6 +21,7 @@
 
 ```{r}
 library(edgeR)
+library(limma)
 library(dplyr)
 library(data.table)
 ```

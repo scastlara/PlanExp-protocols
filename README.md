@@ -1,3 +1,6 @@
+
+[![Publication](https://img.shields.io/badge/Published-Bioinformatics-informational.svg)](https://doi.org/10.1093/bioinformatics/btz802)
+
 # PlanExp-protocols
 Protocols of the analyses performed for the PlanExp web application.
 

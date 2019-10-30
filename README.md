@@ -31,6 +31,12 @@ The protocol for inferring gene co-expression relationships/genetic interactions
 * [Network prediction for 2018 Reddien Cell Atlas](rawdata/network_reddien_FILTERED.csv)
 	* [Unfiltered predictions](https://compgen.bio.ub.edu/dl2841)
 
+## Citation
+
+> S. Castillo-Lara, E. Pascual-Carreras, J.F. Abril<br>
+> [PlanExp: intuitive integration of complex RNA-seq datasets with planarian omics resources](https://doi.org/10.1093/bioinformatics/btz802)<br>
+> Bioinformatics, AOP 2019, doi:10.1093/bioinformatics/btz802<br>
+
 
 ## References
 

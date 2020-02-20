@@ -24,7 +24,7 @@ The analyses for the RNA-seq experiments (traditional RNA-seq and Single-Cell RN
 
 ## Gene co-expression network inference
 
-The protocol for inferring gene co-expression relationships/genetic interactions using GRNBoost can be found [here](markdowns/co-expression_network.md).
+The protocol for inferring gene co-expression relationships/gene regulatory interactions using GRNBoost can be found [here](markdowns/co-expression_network.md).
 
 * [Network prediction for 2018 Rajewsky Cell Atlas](rawdata/network_rajewsky_FILTERED.csv)
 	* [Unfiltered predictions](https://compgen.bio.ub.edu/dl2840)
